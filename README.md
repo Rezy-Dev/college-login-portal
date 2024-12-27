@@ -7,6 +7,14 @@
 ### For PCs
 - Same thing!!
 
+### Add following in `credentials.json`:
+```json
+{
+    "username": "XXf-bit.XX",
+    "password": "PASSWORD"
+}
+```
+
 ---
 
 Idea from: https://github.com/0x7375646F/Softwarica-Gateway-AutoLogin
