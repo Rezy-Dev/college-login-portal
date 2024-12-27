@@ -1,7 +1,6 @@
 import requests
 import json
 
-# Load credentials from credentials.json
 with open("credentials.json", "r") as file:
     credentials = json.load(file)
 
@@ -25,7 +24,6 @@ headers = {
     "Connection": "keep-alive"
 }
 
-# Use credentials from the JSON file
 payload = {
     "username": credentials["username"],
     "password": credentials["password"],
@@ -41,7 +39,6 @@ if response.status_code == 200:
     elif "You have already logged in" in response.text:
         print("User already logged in. Attempting forced login...")
 
-        # Perform forced login
         logout_url = "https://login.texascollege.edu.np/loginpages/logoutusernlogin.shtml"
         logout_payload = {
             "user": credentials["user"],
@@ -65,7 +62,6 @@ if response.status_code == 200:
 else:
     print(f"Login failed with status code: {response.status_code}")
 
-# Save cookies to a file
 with open("cookies.txt", "w") as file:
     for cookie in session.cookies:
         file.write(f"{cookie.name}={cookie.value}\n")
